@@ -33,7 +33,7 @@ body {
     font-family: 'Serif', Courier;
 }
   .text-above {
-    top: 10px; /* Ajusta la posición vertical del texto arriba de la flor */
+    top: -30px; /* Ajusta la posición vertical del texto arriba de la flor */
 }
   .text-below {
     position: absolute;
@@ -44,14 +44,14 @@ body {
     font-family: 'Serif', Verdana;
 }
   .text-below {
-    bottom: -40px; /* Ajusta la posición vertical del texto debajo de la flor */
+    bottom: 10px; /* Ajusta la posición vertical del texto debajo de la flor */
 }
   .corazon {
     height: 200px;
     width: 200px;
     margin: 20px auto;
     left: -10px;
-    bottom: 10px;
+    bottom: 50px;
   
     display: flex;
     align-items: center;
@@ -85,8 +85,9 @@ body {
 
   .foto{
     position: absolute;
-    height: 200px;
+    height: 400px;
     width: 1111px;
+    bottom: 28px;
     animation: beat2 3.5s infinite;
     
   }
