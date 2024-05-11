@@ -8,7 +8,8 @@ body {
   .music{
     position: relative;
     text-align: center;
-    bottom: -30px;
+    -webkit-text-stroke: 0.1px rgb(0, 0, 0);
+    bottom: -8px;
   }
 
   .Text-body {
@@ -26,8 +27,9 @@ body {
   .text-above{
     position: absolute;
     text-align: center;
-    color: #000000; /* Color del texto */
-    font-size: 20px; /* Tamaño del texto */
+    color: #66ff00; /* Color del texto */
+    -webkit-text-stroke: 0.5px rgb(255, 253, 253);
+    font-size: 22px; /* Tamaño del texto */
     font-family: 'Serif', Courier;
 }
   .text-above {
@@ -36,7 +38,8 @@ body {
   .text-below {
     position: absolute;
     text-align: center;
-    color: #000000; /* Color del texto */
+    color: #ffffff; /* Color del texto */
+    -webkit-text-stroke: 0.5px rgb(255, 149, 0);
     font-size: 15px; /* Tamaño del texto */
     font-family: 'Serif', Verdana;
 }
@@ -48,6 +51,7 @@ body {
     width: 200px;
     margin: 20px auto;
     left: -10px;
+    bottom: 10px;
   
     display: flex;
     align-items: center;
@@ -81,7 +85,7 @@ body {
 
   .foto{
     position: absolute;
-    bottom: 200px;
+    bottom: 208px;
     left: -300px;
     width: 1000px;
     height: 0;
