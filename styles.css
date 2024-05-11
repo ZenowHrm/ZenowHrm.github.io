@@ -85,10 +85,8 @@ body {
 
   .foto{
     position: absolute;
-    bottom: 210px;
-    left: -305.5px;
-    width: 1000px;
-    height: 0;
+    height: 200px;
+    width: 1111px;
     animation: beat2 3.5s infinite;
     
   }
