@@ -1,0 +1,513 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+} 
+
+body{
+    font-family: 'Montserrat';
+    background-color: var(--fondo-principal);
+    color: var(--texto-principal);
+}
+
+@media (prefers-color-scheme: dark){
+    body{
+        --desenfoque: #73819171;
+        --fondo-principal: #0a0d12;
+        --desenfoque-fondo:#12171C;
+        --texto-principal: #738191;
+        --color-principal: #1f2937;
+        --color-secundario: #2e3c49;
+        --color: #cfd8e1;
+    }
+}
+@media (prefers-color-scheme: light){
+    body{
+        --desenfoque: #70665b97;
+        --fondo-principal: #f5f2ed;
+        --desenfoque-fondo:#EDE8E3;
+        --texto-principal: #70665b;
+        --color-principal: #e0d6c8;
+        --color-secundario: #d1c3b6;
+        --color: #231903;
+    }
+    img{
+        filter: invert(100%);
+    }
+}
+
+
+/* -------------------- ENCABEZADO */
+
+
+img{
+    width: 200px;
+}
+
+.img_container{
+    max-width: 100dvw;
+    min-height: 20dvh;
+    width: 100%;
+    overflow: hidden;
+    background-image: linear-gradient(var(--desenfoque), var(--desenfoque)), url("/img/foto.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.info{
+    padding: 20px;
+}
+
+.titular{
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.titular h1{
+    font-size: 2.5rem;
+}
+.titular h2{
+    font-size: 1rem;
+}
+
+.redes{
+    display: flex;
+    justify-content: space-between;
+}
+
+.img_redes{
+    position: relative;
+    top: 5px;
+    width: 20px;
+    margin: 0 5px;
+}
+
+.redes a{
+    color: var(--texto-principal);
+}
+
+
+/* -------------------- BOTONES PRINCIPALES */
+
+
+.botones_container{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: var(--color-principal);
+}
+
+.redes-2{
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.redes-2 a{
+    color: var(--texto-principal);
+}
+
+.controles{
+    display: flex;
+    gap: 5px;
+    width: 100dvw;
+}
+
+.botones{
+    user-select: none;
+    text-align: center;
+    width: 100%;
+    padding: 14px 5px;
+    margin: 5px 0;
+    background-color: var(--color-secundario);
+    border: none;
+    color: var(--color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+/* ----- LOGICA BOTONES ----- */
+
+.botones_container input[type="checkbox"], .pag-2, .pag-3{
+    display: none;
+}
+.botones_container:has(input[type="checkbox"]:checked) ~ .paginas .habilidades_container{
+    display: none;
+}
+.botones_container:has(input[type="checkbox"]:checked) ~ .paginas .sobre-mi_container{
+    display: none;
+}
+.botones_container:has(#checkbox1:checked) ~ .paginas .pag-2{
+    display: block;
+}
+.botones_container:has(#checkbox2:checked) ~ .paginas .pag-3{
+    display: block;
+}
+
+/* ----- BORDES BOTONES ----- */
+
+.botones_container:has(#checkbox1:checked) .boton_proyecto{
+    margin-bottom: -1px;
+    border-radius: 0 5px 0 0;
+}
+.botones_container:has(#checkbox2:checked) .boton_contacto{
+    margin-bottom: -1px;
+    border-radius: 5px 0 0 0;
+}
+
+.boton_proyecto{
+    border-radius: 0 5px 5px 0;
+}
+.boton_contacto{
+    border-radius: 5px 0 0 5px;
+}
+
+
+/* -------------------- PAGINA #1 */
+
+
+.paginas{
+    margin: auto;
+}
+
+/* ----- SOBRE MI SECTION ----- */
+
+.sobre-mi_container{
+    padding: 20px;
+    border: solid var(--fondo-principal);
+    border-width: 5px 0;
+    background-color: var(--color-principal);
+    width: 100%;
+}
+
+.titulo_container{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 0 0 20px 0;
+}
+
+.sobre-mi_container p{
+    font-size: 1.45rem;
+    color: var(--color);
+}
+
+/* ----- HABILIDADES SECTION ----- */
+
+.habilidades_container{
+    border-radius: 15px;
+    background-color: var(--desenfoque-fondo);
+    padding: 16px 18px;
+    width: 100%;
+    height: fit-content;
+}
+
+.titulo-habilidades{
+    margin: 0;
+    padding: 0;
+}
+
+.titulo_container span{
+    font-size: 4rem;
+}
+
+.titulo{
+    position: relative;
+    top: 1rem;
+    font-size: 2rem;
+}
+
+.Habilidades{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    grid-template-rows: 100px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 100px;
+    padding: 50px 25px;
+}
+
+.leng_container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 15px;
+}
+
+.habilidades_img{
+    max-width: 80px;
+}
+
+.nombre_lenguaje{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    text-align: center;
+    width: 100%;
+}
+
+
+/* -------------------- PAGINA #2 */
+
+
+.pag-2{
+    background-color: var(--color-secundario);
+    container-name: portfolio;
+    container-type: inline-size;
+    width: 100%;
+}
+
+/* ----- PROYECTOS ----- */
+
+.proyectos_container{
+    background-color: var(--color-secundario);
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: auto;
+    width: 100%;
+    gap: 50px 30px;
+    padding: 50px 30px;
+    min-height: 65vh;
+}
+
+.caja_proyecto{
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffffcc;
+    padding: 3px;
+    height: fit-content;
+}
+
+.img_cont{
+    background-image: linear-gradient(var(--desenfoque), var(--desenfoque)), url(/img/foto.png);
+    background-size: cover;
+    background-position: center;
+    width: 40%;
+}
+
+.info_container{
+    width: 100%;
+    color: #313131;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding: 10px;
+    border: 2px solid var(--texto-principal);
+}
+
+/* ----- GRID ----- */
+
+@container portfolio (min-width: 600px){
+    .proyectos_container{
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+
+/* -------------------- PAGINA #3 */
+
+
+.pag-3{
+    background-color: var(--color-secundario);
+    padding: 1px;
+    width: 100%;
+}
+
+/* ----- FORM SECTION ----- */
+
+.form_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-secundario);
+    padding: 30px;
+}
+
+.messageForm{
+    background-color: var(--color-principal);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.input{
+    position: relative;
+    left: 20px;
+    width: 85%;
+    height: 35px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.textarea{
+    border-radius: 6px;
+    height: 100px;
+    resize: none;
+    padding: 5px;
+    border: none;
+    outline: none;
+}
+
+.sumit{
+    border-radius: 6px;
+    width: 130px;
+    height: 30px;
+    margin: auto;
+    border: none;
+    outline: none;
+}
+
+.mensaje{
+    text-align: center;
+}
+
+
+/* -------------------- FOOTER */
+
+
+.footer{
+    display: flex;
+    text-align: center;
+    font-size: .8rem;
+    color: var(--fondo-principal);
+    justify-content: center;
+    margin: auto;
+    padding: 20px;
+    background-color: var(--texto-principal);
+}
+
+/* -------------------- QUERIES */
+
+@media screen and (min-width: 750px){
+    .redes, .img_container{
+        display: none;
+    }
+    .info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100dvw;
+        min-height: 30dvh;
+        width: 100%;
+        overflow: hidden;
+        background-image: linear-gradient(var(--desenfoque), var(--desenfoque)), url("/img/foto.png");
+        background-position: center;
+        background-size: cover;
+    }
+    .titular{
+        color: #ffffff;
+    }
+    .botones_container{
+        padding: 0 20px;
+    }
+    .redes-2{
+        display: flex;
+        gap: 5px;
+    }
+    .controles{
+        width: fit-content;
+    }
+    .botones{
+        padding: 14px 30px;
+        border-radius: 5px;
+    }
+
+    .botones_container input[type="checkbox"], .pag-2, .pag-3{
+        display: none;
+    }
+    .botones_container:has(input[type="checkbox"]:checked) ~ .paginas .sobre-mi_container{
+        display: block;
+    }
+    .botones_container:has(input[type="checkbox"]:checked) ~ .paginas .habilidades_container{
+        display: none;
+    }
+    .botones_container:has(#checkbox1:checked) ~ .paginas .pag-2{
+        display: block;
+    }
+    .botones_container:has(#checkbox2:checked) ~ .paginas .pag-3{
+        display: block;
+    }
+
+    .botones_container:has(#checkbox1:checked) .boton_proyecto{
+        margin-bottom: -1px;
+        border-radius: 5px 5px 0 0;
+    }
+    .botones_container:has(#checkbox2:checked) .boton_contacto{
+        margin-bottom: -1px;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .sobre-mi_container p{
+        font-size: clamp(.9rem, 1.4vw, 1.6rem);
+    }
+    .titulo{
+        margin-bottom: 50px;
+        font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    }
+    .titulo_container span{
+        font-size: clamp(3.5rem, 4.5vw, 4rem);
+    }
+    .paginas{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        padding: 0 20px 0 50px;
+    }
+    .sobre-mi_container{
+        border-radius: 20px;
+        min-width: 250px;
+        max-width: 35%;
+        padding: 30px;
+        height: fit-content;
+        margin: 10px 0;
+    }
+    .habilidades_container{
+        margin: 20px;
+    }
+    .Habilidades{
+        gap: 50px;
+        grid-template-columns: repeat(auto-fill, 100px);
+        grid-template-rows: 100px;
+    }
+    .habilidades_img{
+        max-width: 80px;
+    }
+    .nombre_lenguaje{
+        font-size: 1.5rem;
+    }
+    .proyectos_container{
+        border-radius: 10px;
+    }
+    .pag-2{
+        border-radius: 30px;
+    }
+    .pag-3{
+        border-radius: 30px 0 30px 30px;
+    }
+    .form_container{
+        background-color: transparent;
+    }
+}
